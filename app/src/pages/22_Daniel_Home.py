@@ -1,0 +1,30 @@
+import logging
+logger = logging.getLogger(__name__)
+
+import streamlit as st
+from modules.nav import SideBarLinks
+
+st.set_page_config(layout = 'wide')
+
+# Show appropriate sidebar links for the role of the currently logged in user
+SideBarLinks()
+
+st.title(f"Welcome {st.session_state['first_name']}.")
+st.write('')
+st.write('')
+st.write('### What would you like to do today?')
+
+if st.button('View Backtest Data', 
+             type='primary',
+             use_container_width=True):
+  st.switch_page('pages/23_Daniel_backtests.py')
+
+if st.button('Compare Stocks', 
+             type='primary',
+             use_container_width=True):
+  st.switch_page('pages/24_Daniel_StockCompare.py')
+
+if st.button('Import and Export Strategies', 
+             type='primary',
+             use_container_width=True):
+  st.switch_page('pages/25_Daniel_Strategies.py')
