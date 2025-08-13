@@ -14,21 +14,24 @@ def AboutPageNav():
     st.sidebar.page_link("pages/30_About.py", label="About", icon="🧠")
 
 
-#### ------------------------ Examples for Role of pol_strat_advisor ------------------------
-def PolStratAdvHomeNav():
+#### ------------------------ Examples for Role of financial advisor ------------------------
+def FinAdvHome():
     st.sidebar.page_link(
-        "pages/00_Pol_Strat_Home.py", label="Political Strategist Home", icon="👤"
+        "pages/00_Financial_Advisor_Home.py", label="Financial Advisor Home", icon="👤"
     )
 
 
-def WorldBankVizNav():
+def StratPerfNav():
     st.sidebar.page_link(
-        "pages/01_World_Bank_Viz.py", label="World Bank Visualization", icon="🏦"
+        "pages/01_View_Strategy_Performance.py", label="View Strategy Performance", icon="🏦"
     )
 
 
-def MapDemoNav():
-    st.sidebar.page_link("pages/02_Map_Demo.py", label="Map Demonstration", icon="🗺️")
+def EvalStratNav():
+    st.sidebar.page_link("pages/02_Evaluate_Strategy.py", label="Evaluate Strategy", icon="🗺️")
+
+def ExportStrat():
+    st.sidebar.page_link("pages/03_Export_Strategy.py", label="Export Strategy", icon="🗺️")
 
 
 ## ------------------------ Examples for Role of usaid_worker ------------------------
@@ -46,6 +49,20 @@ def ClassificationNav():
     st.sidebar.page_link(
         "pages/13_Classification.py", label="Classification Demo", icon="🌺"
     )
+
+## ------------------------ Examples for Daniel ------------------------
+
+def DanielHomeNav():
+    st.sidebar.page_link("pages/22_Daniel_Home.py", label="Daniel Home Page", icon="👤")
+
+def DanBacktestsNav():
+    st.sidebar.page_link("pages/23_Daniel_backtests.py", label="Backtests", icon="📊")
+
+def DanStockCompareNav():
+    st.sidebar.page_link("pages/24_Daniel_StockCompare.py", label="Stock Compare", icon="🗺️")
+
+def DanStrategiesNav():
+    st.sidebar.page_link("pages/25_Daniel_Strategies.py", label="Strategies", icon="📄")
 
 
 def NgoDirectoryNav():
@@ -86,10 +103,11 @@ def SideBarLinks(show_home=False):
     if st.session_state["authenticated"]:
 
         # Show World Bank Link and Map Demo Link if the user is a political strategy advisor role.
-        if st.session_state["role"] == "pol_strat_advisor":
-            PolStratAdvHomeNav()
-            WorldBankVizNav()
-            MapDemoNav()
+        if st.session_state["role"] == "financial_advisor":
+            FinAdvHome()
+            StratPerfNav()
+            EvalStratNav()
+            ExportStrat()
 
         # If the user role is usaid worker, show the Api Testing page
         if st.session_state["role"] == "usaid_worker":
@@ -103,6 +121,13 @@ def SideBarLinks(show_home=False):
         if st.session_state["role"] == "administrator":
             AdminPageNav()
 
+        if st.session_state["role"] == "User":
+            DanielHomeNav()
+            DanBacktestsNav()
+            DanStockCompareNav()
+            DanStrategiesNav()
+
+
     # Always show the About page at the bottom of the list of links
     AboutPageNav()
 
@@ -112,3 +137,4 @@ def SideBarLinks(show_home=False):
             del st.session_state["role"]
             del st.session_state["authenticated"]
             st.switch_page("Home.py")
+    
