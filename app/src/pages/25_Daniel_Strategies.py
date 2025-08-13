@@ -41,8 +41,4 @@ st.download_button(
     data=buffer.getvalue(),
     file_name="strategy_template.csv",
     mime="text/csv"
-<<<<<<< HEAD
 )
-=======
-)
->>>>>>> 87a9cb74fbb54dc7b67742b3c21ad4b18b7a7bab
