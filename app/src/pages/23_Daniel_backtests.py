@@ -45,4 +45,8 @@ with st.form("backtest_form"):
         })
 
         st.subheader("Backtest Results")
+<<<<<<< HEAD
         st.dataframe(backtest_results, use_container_width=True)
+=======
+        st.dataframe(backtest_results, use_container_width=True)
+>>>>>>> 87a9cb74fbb54dc7b67742b3c21ad4b18b7a7bab

@@ -82,6 +82,9 @@ if st.button('Act as Daniel',
     st.session_state['role'] = 'User'
     st.session_state['first_name'] = 'Daniel'
     st.switch_page('pages/22_Daniel_Home.py')
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 87a9cb74fbb54dc7b67742b3c21ad4b18b7a7bab
 

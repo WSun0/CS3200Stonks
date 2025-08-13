@@ -70,4 +70,8 @@ if "live_data" in st.session_state and "backtest_data" in st.session_state:
     # Simple chart comparison
     st.line_chart(
         comparison_df.set_index("Date")[["Price_Live", "Price_Backtest"]]
+<<<<<<< HEAD
     )
+=======
+    )
+>>>>>>> 87a9cb74fbb54dc7b67742b3c21ad4b18b7a7bab
