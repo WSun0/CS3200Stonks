@@ -19,14 +19,14 @@ st.write('### What would you like to do today?')
 if st.button('Diagnose Errors', 
              type='primary',
              use_container_width=True):
-  st.switch_page('pages/Error_Diagnostics.py')
+  st.switch_page('pages/Jamie_Error_Diagnostics.py')
 
 if st.button('Manage Backups & Restores', 
              type='primary',
              use_container_width=True):
-  st.switch_page('pages/Data_Backup.py')
+  st.switch_page('pages/Jamie_Data_Backup.py')
 
 if st.button('Deploy Updates & Patches', 
              type='primary',
              use_container_width=True):
-  st.switch_page('pages/Update_Patches.py')
+  st.switch_page('pages/Jamie_Update_Patches.py')
