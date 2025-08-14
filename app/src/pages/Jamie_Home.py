@@ -29,4 +29,4 @@ if st.button('Manage Backups & Restores',
 if st.button('Deploy Updates & Patches', 
              type='primary',
              use_container_width=True):
-  st.switch_page('pagesJamie_Update_Patches.py')
+  st.switch_page('pages/Jamie_Update_Patches.py')

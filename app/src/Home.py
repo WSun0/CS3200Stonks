@@ -38,7 +38,7 @@ st.title('CS 3200 Stonks Project')
 st.write('\n\n')
 # st.write('### Overview:')
 # st.write('\n')
-st.write('#### HI! As which user flow would you like to experience?')
+st.write('#### Hi! As which user flow would you like to experience?')
 
 # For each of the user personas for which we are implementing
 # functionality, we put a button on the screen that the user 
