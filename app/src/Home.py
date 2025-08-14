@@ -38,47 +38,44 @@ st.title('CS 3200 Stonks Project')
 st.write('\n\n')
 # st.write('### Overview:')
 # st.write('\n')
-st.write('#### HI! As which user would you like to log in?')
+st.write('#### HI! As which user flow would you like to experience?')
 
 # For each of the user personas for which we are implementing
 # functionality, we put a button on the screen that the user 
 # can click to MIMIC logging in as that mock user. 
 
-if st.button("Act as Alex, a Financial Advisor", 
+if st.button("Act as Alex, a Professional Financial Analyst", 
             type = 'primary', 
             use_container_width=True):
-    # when user clicks the button, they are now considered authenticated
     st.session_state['authenticated'] = True
-    # we set the role of the current user
-    st.session_state['role'] = 'financial_advisor'
-    # we add the first name of the user (so it can be displayed on 
-    # subsequent pages). 
+    st.session_state['role'] = 'user'
     st.session_state['first_name'] = 'Alex'
-    # finally, we ask streamlit to switch to another page, in this case, the 
-    # landing page for this particular user type
-    logger.info("Logging in as Financial Advisor Alex")
-    st.switch_page('pages/00_Financial_Advisor_Home.py')
+    logger.info("Logging in as Professional Financial Analyst Persona")
+    st.switch_page('pages/Alex_Home.py')
 
-if st.button('Act as Mohammad, an USAID worker', 
+if st.button('Act as Mia, a College Student & Amateur Investor', 
             type = 'primary', 
             use_container_width=True):
     st.session_state['authenticated'] = True
-    st.session_state['role'] = 'usaid_worker'
-    st.session_state['first_name'] = 'Mohammad'
-    st.switch_page('pages/10_USAID_Worker_Home.py')
+    st.session_state['role'] = 'user'
+    st.session_state['first_name'] = 'Mia'
+    logger.info("Logging in as Mia, a College Student & Amateur Investor")
+    st.switch_page('pages/Mia_Home.py')
 
-if st.button('Act as Jamie, Backend Developer', 
+if st.button('Act as Jamie, a System Administrator', 
             type = 'primary', 
             use_container_width=True):
     st.session_state['authenticated'] = True
-    st.session_state['role'] = 'administrator'
-    st.session_state['first_name'] = 'SysAdmin'
-    st.switch_page('pages/20_Admin_Home.py')
+    st.session_state['role'] = 'admin'
+    st.session_state['first_name'] = 'Jamie'
+    logger.info("Logging in as Jamie, a System Administrator")
+    st.switch_page('pages/Jamie_Home.py')
 
-if st.button('Act as Daniel', 
+if st.button('Act as Daniel, a Retail Investor', 
             type = 'primary', 
             use_container_width=True):
     st.session_state['authenticated'] = True
-    st.session_state['role'] = 'User'
+    st.session_state['role'] = 'user'
     st.session_state['first_name'] = 'Daniel'
-    st.switch_page('pages/22_Daniel_Home.py')
+    logger.info("Logging in as Daniel, a Retail Investor")
+    st.switch_page('pages/Daniel_Home.py')
