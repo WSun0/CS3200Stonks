@@ -19,14 +19,14 @@ st.write('### What would you like to do today?')
 if st.button('View Backtest Data', 
              type='primary',
              use_container_width=True):
-  st.switch_page('pages/23_Daniel_backtests.py')
+  st.switch_page('pages/Daniel_Backtests.py')
 
 if st.button('Compare Stocks', 
              type='primary',
              use_container_width=True):
-  st.switch_page('pages/24_Daniel_StockCompare.py')
+  st.switch_page('pages/Daniel_Compare_Strategy.py')
 
 if st.button('Import and Export Strategies', 
              type='primary',
              use_container_width=True):
-  st.switch_page('pages/25_Daniel_Strategies.py')
+  st.switch_page('pages/Daniel_Import_Export.py')
