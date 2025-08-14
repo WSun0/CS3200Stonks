@@ -23,7 +23,7 @@ def FinAdvHome():
 
 def StratPerfNav():
     st.sidebar.page_link(
-        "pages/01_View_Strategy_Performance.py", label="View Strategy Performance", icon="🏦"
+        "pages/01_View_Performance.py", label="View Strategy Performance", icon="🏦"
     )
 
 
