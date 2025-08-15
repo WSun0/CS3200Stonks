@@ -106,7 +106,7 @@ def SideBarLinks(show_home=False):
 
     if st.session_state["authenticated"]:
         # Always show a logout button if there is a logged in user
-        if st.sidebar.button("Logout"):
+        if st.sidebar.button("Try Different User"):
             del st.session_state["role"]
             del st.session_state["authenticated"]
             st.switch_page("Home.py")
