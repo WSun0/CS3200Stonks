@@ -1,108 +1,227 @@
-# Summer 2 2025 CS 3200 Project Template
+# CS 3200 Stonks Project
 
-This is a template repo CS 3200 Summer 2 2025 Course Project. 
+A comprehensive stock trading strategy platform built for CS 3200 Database Design course. This application demonstrates modern full-stack development practices with role-based access control, real-time data analysis, and comprehensive trading strategy management.
 
-It includes most of the infrastructure setup (containers), sample databases, and example UI pages. Explore it fully and ask questions!
+## 🚀 Project Overview
 
-## Prerequisites
+**Stonks** is a multi-user trading strategy platform that provides different interfaces and capabilities based on user roles. The application allows users to create, test, evaluate, and export trading strategies while providing comprehensive performance analytics and risk management tools.
 
-- A GitHub Account
-- A terminal-based git client or GUI Git client such as GitHub Desktop or the Git plugin for VSCode.
-- VSCode with the Python Plugin installed
-- A distribution of Python running on your laptop. The distribution supported by the course is Anaconda or Miniconda.
-  - Create a new Python 3.11 environment in conda named `db-proj` by running:  
-     ```bash
-     conda create -n db-proj python=3.11
-     ```
-  - Install the Python dependencies listed in `api/requirements.txt` and `app/src/requirements.txt` into your local Python environment. You can do this by running `pip install -r requirements.txt` in each respective directory.
+## 👥 User Personas & Features
 
-## Structure of the Repo
+### **Alex - Professional Financial Advisor**
+- **View Strategy Performance**: Comprehensive dashboard with KPIs and portfolio tracking
+- **Evaluate Strategies**: Detailed backtest results with trade-by-trade analysis
+- **Export Strategy Reports**: Generate downloadable reports in CSV format
+- **Performance Analytics**: ROI, Sharpe ratio, drawdown, and win rate metrics
 
-- The repo is organized into five main directories:
-  - `./app` - the Streamlit app
-  - `./api` - the Flask REST API
-  - `./database-files` - SQL scripts to initialize the MySQL database
-  - `./datasets` - folder for storing datasets
+### **Mia - College Student & Amateur Investor**
+- **Learn Trading Metrics**: Educational content on trading fundamentals
+- **Run Backtests**: Test strategies on historical data
+- **Share Strategies**: Collaborate with other users
+- **Beginner-Friendly Interface**: Simplified tools for learning
 
-- The repo also contains a `docker-compose.yaml` file that is used to set up the Docker containers for the front end app, the REST API, and MySQL database. 
+### **Jamie - System Administrator**
+- **Error Diagnostics**: Monitor system health and resolve issues
+- **Data Backup & Restore**: Manage system backups and recovery
+- **Deploy Updates**: Manage system patches and deployments
+- **System Monitoring**: Real-time system status and performance tracking
 
-## Suggestion for Learning the Project Code Base
+### **Daniel - Retail Investor**
+- **Run Backtests**: Quick strategy testing on selected stocks
+- **Compare Strategies**: Side-by-side performance comparison
+- **Import/Export Strategies**: Share and import strategy templates
+- **Stock Analysis**: Compare live market data with backtest results
 
-If you are not familiar with web app development, this code base might be confusing. But don't worry, we'll get through it together. Here are some suggestions for learning the code base:
+## 🏗️ Architecture
 
-1. Have two versions of the template repo - one for you to individually explore and learn and another for your team's project implementation.
-1. Start by exploring the `./app` directory. This is where the Streamlit app is located. The Streamlit app is a Python-based web app that is used to interact with the user. It's a great way to build a simple web app without having to learn a lot of web development.
-1. Next, explore the `./api` directory. This is where the Flask REST API is located. The REST API is used to interact with the database and perform other server-side tasks. You might also consider this the "application logic" or "business logic" layer of your app. 
-1. Finally, explore the `./database-files` directory. This is where the SQL scripts are located that will be used to initialize the MySQL database.
+### **Frontend (Streamlit)**
+- **Role-Based Access Control**: Different interfaces for different user types
+- **Responsive Design**: Wide layout optimized for data visualization
+- **Interactive Components**: Charts, tables, forms, and real-time updates
+- **Navigation System**: Custom sidebar with role-specific page links
 
-### Setting Up Your Personal Testing Repo
+### **Backend (Flask REST API)**
+- **RESTful Endpoints**: Clean API design for data access
+- **Database Integration**: MySQL with comprehensive trading data
+- **Error Handling**: Robust error logging and user feedback
+- **Authentication**: Session-based user management
 
-**Before you start**: You need to have a GitHub account and a terminal-based git client or GUI Git client such as GitHub Desktop or the Git plugin for VSCode.
+### **Database (MySQL)**
+- **Users & Authentication**: User management and role assignment
+- **Trading Strategies**: Strategy definitions, rules, and parameters
+- **Asset Information**: Stock data, sectors, and asset classes
+- **Performance Metrics**: ROI, drawdown, Sharpe ratio, win rates
+- **Backtest Results**: Historical strategy performance data
+- **Error Logging**: System diagnostics and user activity tracking
 
-1. Clone this repo to your local machine.
-   1. You can do this by clicking the green "Code" button on the top right of the repo page and copying the URL. Then, in your terminal, run `git clone <URL>`.
-   1. Or, you can use the GitHub Desktop app to clone the repo. See [this page](https://docs.github.com/en/desktop/adding-and-cloning-repositories/cloning-a-repository-from-github-to-github-desktop) of the GitHub Desktop Docs for more info. 
-1. Open the repository folder in VSCode.
-1. Set up the `.env` file in the `api` folder based on the `.env.template` file.
-   1. Make a copy of the `.env.template` file and name it `.env`. 
-   1. Open the new `.env` file. 
-   1. On the last line, delete the `<...>` placeholder text, and put a password. Don't reuse any passwords you use for any other services (email, etc.) 
-1. For running the testing containers (for your personal repo), you will tell `docker compose` to use a different configuration file than the typical one.  The one you will use for testing is `sandbox.yaml`.
-   1. `docker compose -f sandbox.yaml up -d` to start all the containers in the background
-   1. `docker compose -f sandbox.yaml down` to shutdown and delete the containers
-   1. `docker compose -f sandbox.yaml up db -d` only start the database container (replace db with api or app for the other two services as needed)
-   1. `docker compose -f sandbox.yaml stop` to "turn off" the containers but not delete them.
+### **Containerization (Docker)**
+- **Multi-Service Architecture**: Separate containers for app, API, and database
+- **Development Environment**: Sandbox configuration for testing
+- **Production Ready**: Scalable container orchestration
+- **Easy Deployment**: One-command setup and teardown
 
-### Setting Up Your Team's Repo
+## 🛠️ Technology Stack
 
-**Before you start**: As a team, one person needs to assume the role of _Team Project Repo Owner_.
+- **Frontend**: Streamlit, Pandas, Plotly, Altair
+- **Backend**: Flask, Python 3.11, RESTful APIs
+- **Database**: MySQL 9 with comprehensive schema
+- **Data Analysis**: NumPy, Pandas, Scikit-learn
+- **Containerization**: Docker, Docker Compose
+- **Development**: VSCode, Git, Conda environments
 
-1. The Team Project Repo Owner needs to **fork** this template repo into their own GitHub account **and give the repo a name consistent with your project's name**. If you're worried that the repo is public, don't. Every team is doing a different project.
-1. In the newly forked team repo, the Team Project Repo Owner should go to the **Settings** tab, choose **Collaborators and Teams** on the left-side panel. Add each of your team members to the repository with Write access.
+## 📊 Database Schema
 
-**Remaining Team Members**
+The application includes comprehensive tables for:
+- **Users**: Authentication, roles, and permissions
+- **Strategies**: Trading strategy definitions and rules
+- **Assets**: Stock information, sectors, and classifications
+- **Price History**: Historical price data and volume
+- **Backtests**: Strategy testing results and performance
+- **Metrics**: ROI, drawdown, Sharpe ratio calculations
+- **Error Logging**: System diagnostics and user activity
+- **Backups**: System backup management and restoration
 
-1. Each of the other team members will receive an invitation to join.
-1. Once you have accepted the invitation, you should clone the Team's Project Repo to your local machine.
-1. Set up the `.env` file in the `api` folder based on the `.env.template` file.
-1. For running the testing containers (for your team's repo):
-   1. `docker compose up -d` to start all the containers in the background
-   1. `docker compose down` to shutdown and delete the containers
-   1. `docker compose up db -d` only start the database container (replace db with api or app for the other two services as needed)
-   1. `docker compose stop` to "turn off" the containers but not delete them.
+## 🚀 Getting Started
 
-**Note:** You can also use the Docker Desktop GUI to start and stop the containers after the first initial run.
+### **Prerequisites**
+- Docker and Docker Compose
+- Python 3.11+ with Conda
+- Git for version control
 
+### **Quick Start**
+1. **Clone the repository**
+   ```bash
+   git clone <your-repo-url>
+   cd CS3200Stonks
+   ```
 
-## Handling User Role Access and Control
+2. **Set up environment variables**
+   ```bash
+   cd api
+   # Create .env file with your database credentials
+   cp .env.template .env
+   # Edit .env with your secure password
+   ```
 
-In most applications, when a user logs in, they assume a particular role. For instance, when one logs in to a stock price prediction app, they may be a single investor, a portfolio manager, or a corporate executive (of a publicly traded company). Each of those _roles_ will likely present some similar features as well as some different features when compared to the other roles. So, how do you accomplish this in Streamlit? This is sometimes called Role-based Access Control, or **RBAC** for short.
+3. **Start the application**
+   ```bash
+   # For development/testing
+   docker compose -f sandbox.yaml up -d
+   
+   # For production
+   docker compose up -d
+   ```
 
-The code in this project demonstrates how to implement a simple RBAC system in Streamlit but without actually using user authentication (usernames and passwords). The Streamlit pages from the original template repo are split up among 3 roles - Political Strategist, USAID Worker, and a System Administrator role (this is used for any sort of system tasks such as re-training ML model, etc.). It also demonstrates how to deploy an ML model.
+4. **Access the application**
+   - **Frontend**: http://localhost:8502 (sandbox) or http://localhost:8501 (production)
+   - **API**: http://localhost:4001 (sandbox) or http://localhost:4000 (production)
+   - **Database**: localhost:3201 (sandbox) or localhost:3200 (production)
 
-Wrapping your head around this will take a little time and exploration of this code base. Some highlights are below.
+### **Development Setup**
+1. **Create conda environment**
+   ```bash
+   conda create -n db-proj python=3.11
+   conda activate db-proj
+   ```
 
-### Getting Started with the RBAC
+2. **Install dependencies**
+   ```bash
+   pip install -r api/requirements.txt
+   pip install -r app/src/requirements.txt
+   ```
 
-1. We need to turn off the standard panel of links on the left side of the Streamlit app. This is done through the `app/src/.streamlit/config.toml` file. So check that out. We are turning it off so we can control directly what links are shown.
-1. Then I created a new python module in `app/src/modules/nav.py`. When you look at the file, you will se that there are functions for basically each page of the application. The `st.sidebar.page_link(...)` adds a single link to the sidebar. We have a separate function for each page so that we can organize the links/pages by role.
-1. Next, check out the `app/src/Home.py` file. Notice that there are 3 buttons added to the page and when one is clicked, it redirects via `st.switch_page(...)` to that Roles Home page in `app/src/pages`. But before the redirect, I set a few different variables in the Streamlit `session_state` object to track role, first name of the user, and that the user is now authenticated.
-1. Notice near the top of `app/src/Home.py` and all other pages, there is a call to `SideBarLinks(...)` from the `app/src/nav.py` module. This is the function that will use the role set in `session_state` to determine what links to show the user in the sidebar.
-1. The pages are organized by Role. Pages that start with a `0` are related to the _Political Strategist_ role. Pages that start with a `1` are related to the _USAID worker_ role. And, pages that start with a `2` are related to The _System Administrator_ role.
+## 🔧 Development Commands
 
+### **Docker Management**
+```bash
+# Start all services
+docker compose -f sandbox.yaml up -d
 
-## Incorporating ML Models into your Project (Optional for CS 3200)
+# Stop services
+docker compose -f sandbox.yaml stop
 
-_Note_: This project only contains the infrastructure for a hypothetical ML model.
+# Remove containers and volumes
+docker compose -f sandbox.yaml down -v
 
-1. Collect and preprocess necessary datasets for your ML models.
-1. Build, train, and test your ML model in a Jupyter Notebook.
-   - You can store your datasets in the `datasets` folder. You can also store your Jupyter Notebook in the `ml-src` folder.
-1. Once your team is happy with the model's performance, convert your Jupyter Notebook code for the ML model to a pure Python script.
-   - You can include the `training` and `testing` functionality as well as the `prediction` functionality.
-   - Develop and test this pure Python script first in the `ml-src` folder.
-   - You may or may not need to include data cleaning, though.
-1. Review the `api/backend/ml_models` module. In this folder,
-   - We've put a sample (read _fake_) ML model in the `model01.py` file. The `predict` function will be called by the Flask REST API to perform '_real-time_' prediction based on model parameter values that are stored in the database. **Important**: you would never want to hard code the model parameter weights directly in the prediction function.
-1. The prediction route for the REST API is in `api/backend/customers/customer_routes.py`. Basically, it accepts two URL parameters and passes them to the `prediction` function in the `ml_models` module. The `prediction` route/function packages up the value(s) it receives from the model's `predict` function and send its back to Streamlit as JSON.
-1. Back in streamlit, check out `app/src/pages/11_Prediction.py`. Here, I create two numeric input fields. When the button is pressed, it makes a request to the REST API URL `/c/prediction/.../...` function and passes the values from the two inputs as URL parameters. It gets back the results from the route and displays them. Nothing fancy here.
+# View logs
+docker compose -f sandbox.yaml logs -f
+```
+
+### **Database Management**
+```bash
+# Reset database (runs SQL files again)
+docker compose -f sandbox.yaml down db -v
+docker compose -f sandbox.yaml up db -d
+```
+
+## 📁 Project Structure
+
+```
+CS3200Stonks/
+├── app/                          # Streamlit frontend
+│   ├── src/
+│   │   ├── pages/               # User-specific pages
+│   │   ├── modules/             # Navigation and utilities
+│   │   └── assets/              # Images and static files
+│   └── Dockerfile
+├── api/                          # Flask backend
+│   ├── backend/                  # API routes and business logic
+│   ├── requirements.txt          # Python dependencies
+│   └── Dockerfile
+├── database-files/               # SQL schema and sample data
+├── datasets/                     # Data storage
+├── docker-compose.yaml           # Production configuration
+└── sandbox.yaml                  # Development configuration
+```
+
+## 🎯 Key Features
+
+- **Multi-User System**: Role-based access control with personalized interfaces
+- **Strategy Management**: Create, test, and evaluate trading strategies
+- **Performance Analytics**: Comprehensive metrics and visualization
+- **Real-Time Data**: Live market data integration
+- **Export Capabilities**: Download reports and strategy templates
+- **System Administration**: Monitoring, backup, and update management
+- **Educational Content**: Learning resources for new traders
+- **Collaboration Tools**: Share and import strategies between users
+
+## 🔒 Security Features
+
+- **Environment Variables**: Secure credential management
+- **Session Management**: User authentication and role validation
+- **Input Validation**: Sanitized user inputs and SQL injection prevention
+- **Error Handling**: Secure error messages without information leakage
+
+## 📈 Future Enhancements
+
+- **Real-time Market Data**: Live stock price feeds
+- **Advanced Analytics**: Machine learning model integration
+- **Mobile Interface**: Responsive design for mobile devices
+- **API Documentation**: Comprehensive API reference
+- **User Management**: Advanced user roles and permissions
+- **Performance Optimization**: Caching and database optimization
+
+## 🤝 Contributing
+
+This project is developed for CS 3200 Database Design course. For development:
+1. Follow the established code structure
+2. Maintain role-based access control patterns
+3. Add comprehensive error handling
+4. Include logging for debugging
+5. Test with Docker containers
+
+## 📝 License
+
+This project is developed for educational purposes as part of CS 3200 coursework.
+
+## 🆘 Support
+
+For technical issues or questions:
+- Check Docker container logs
+- Verify environment variable configuration
+- Review database connection settings
+- Consult the project documentation
+
+---
+
+**Built with ❤️ for CS 3200 Database Design Course**
